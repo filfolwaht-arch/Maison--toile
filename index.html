@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Velora Jewelry | مجوهرات فاخرة</title>
+<meta name="description" content="Velora Jewelry - مجوهرات فاخرة بتصميم أنيق، خواتم وقلادات وأساور وأقراط وساعات. توصيل لجميع المدن المغربية والدفع عند الاستلام.">
+<meta name="keywords" content="مجوهرات, خواتم, قلادات, أساور, أقراط, ساعات, المغرب, Velora Jewelry">
+<meta property="og:title" content="Velora Jewelry | مجوهرات فاخرة">
+<meta property="og:description" content="مجوهرات فاخرة بلمسة عصرية، توصيل لجميع المدن المغربية والدفع عند الاستلام.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/icons/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<!-- ============ LOADER ============ -->
+<div id="page-loader"><div class="loader-mark"></div></div>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <nav class="nav container">
+    <a href="#home" class="logo">Velora<span>.</span></a>
+    <div class="nav-links">
+      <a href="#home">الرئيسية</a>
+      <a href="#categories">الفئات</a>
+      <a href="#shop">المتجر</a>
+      <a href="#track">تتبع الطلب</a>
+      <a href="#about">من نحن</a>
+      <a href="#contact">اتصل بنا</a>
+    </div>
+    <div class="nav-actions">
+      <button class="icon-btn" id="open-wishlist" aria-label="المفضلة">
+        <i class="fa-regular fa-heart"></i><span class="badge" id="wishlist-badge">0</span>
+      </button>
+      <button class="icon-btn" id="open-cart" aria-label="السلة">
+        <i class="fa-solid fa-bag-shopping"></i><span class="badge" id="cart-badge">0</span>
+      </button>
+      <button class="icon-btn burger" id="burger-btn" aria-label="القائمة"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </nav>
+</header>
+
+<!-- ============ MOBILE MENU ============ -->
+<div class="mobile-menu" id="mobile-menu">
+  <div class="close-menu"><i class="fa-solid fa-xmark"></i></div>
+  <a href="#home">الرئيسية</a>
+  <a href="#categories">الفئات</a>
+  <a href="#shop">المتجر</a>
+  <a href="#track">تتبع الطلب</a>
+  <a href="#about">من نحن</a>
+  <a href="#contact">اتصل بنا</a>
+</div>
+<div class="overlay" id="overlay"></div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <span class="eyebrow">مجموعة حصرية</span>
+    <h1>تألقي بلمسة <em>ذهبية</em> لا تُنسى</h1>
+    <p>مجوهرات فاخرة مصممة بعناية فائقة — خواتم، قلادات، أساور، أقراط وساعات تعكس أناقتك في كل مناسبة.</p>
+    <div class="hero-actions">
+      <a href="#shop" class="btn btn-gold">تسوقي الآن</a>
+      <a href="#categories" class="btn btn-outline">استكشفي المجموعات</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATEGORIES ============ -->
+<section class="section" id="categories">
+  <div class="container">
+    <span class="eyebrow">تسوقي حسب الفئة</span>
+    <h2 class="section-title">مجموعاتنا</h2>
+    <div class="gold-divider"><span></span></div>
+    <div class="categories-grid" id="categories-grid"></div>
+  </div>
+</section>
+
+<!-- ============ FEATURED ============ -->
+<section class="section alt" id="featured-section">
+  <div class="container">
+    <span class="eyebrow">الأكثر تميزاً</span>
+    <h2 class="section-title">قطع مختارة بعناية</h2>
+    <div class="gold-divider"><span></span></div>
+    <div class="products-grid" id="featured-grid"></div>
+  </div>
+</section>
+
+<!-- ============ SHOP ============ -->
+<section class="section" id="shop">
+  <div class="container">
+    <span class="eyebrow">المتجر الكامل</span>
+    <h2 class="section-title">جميع المنتجات</h2>
+    <div class="gold-divider"><span></span></div>
+
+    <div class="shop-toolbar">
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="ابحثي عن منتج...">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <select class="filter-select" id="category-filter"></select>
+      <select class="filter-select" id="sort-select">
+        <option value="newest">الأحدث</option>
+        <option value="oldest">الأقدم</option>
+        <option value="price_asc">السعر: من الأقل للأعلى</option>
+        <option value="price_desc">السعر: من الأعلى للأقل</option>
+      </select>
+    </div>
+
+    <div class="products-grid" id="products-grid"></div>
+  </div>
+</section>
+
+<!-- ============ TRACK ORDER ============ -->
+<section class="section alt" id="track">
+  <div class="container">
+    <span class="eyebrow">تابعي طلبك</span>
+    <h2 class="section-title">تتبع الطلب</h2>
+    <div class="gold-divider"><span></span></div>
+    <div class="track-box">
+      <form id="track-form" style="display:flex;gap:10px;">
+        <input type="text" id="track-input" placeholder="أدخلي رقم الطلب (مثال: VJ-240101-AB12C)" style="flex:1;padding:14px;background:var(--black-card);border:1px solid rgba(255,255,255,0.1);border-radius:4px;color:var(--white);">
+        <button type="submit" class="btn btn-gold">بحث</button>
+      </form>
+      <div class="track-result hidden" id="track-result"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <img src="assets/images/about.jpg" alt="Velora Jewelry" onerror="this.src='assets/images/placeholder.jpg'">
+      <div class="about-text">
+        <span class="eyebrow" style="text-align:right;">من نحن</span>
+        <h2>Velora Jewelry</h2>
+        <p>منذ انطلاقتنا، كرّسنا شغفنا لصياغة مجوهرات تجمع بين الأناقة الكلاسيكية واللمسة العصرية، لنقدّم لكِ قطعاً تُخلّد لحظاتك الثمينة.</p>
+        <p>نلتزم بجودة عالية في اختيار الخامات والتصميم، مع خدمة توصيل تغطي جميع المدن المغربية وخيار الدفع عند الاستلام لراحتك التامة.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section alt" id="contact">
+  <div class="container">
+    <span class="eyebrow">تواصلي معنا</span>
+    <h2 class="section-title">اتصلي بنا</h2>
+    <div class="gold-divider"><span></span></div>
+    <div class="contact-grid">
+      <div class="contact-info-card">
+        <div class="row"><i class="fa-solid fa-phone"></i><span>+212 6XX XXX XXX</span></div>
+        <div class="row"><i class="fa-brands fa-whatsapp"></i><span>راسلينا عبر واتساب لأي استفسار</span></div>
+        <div class="row"><i class="fa-solid fa-envelope"></i><span>contact@velorajewelry.ma</span></div>
+        <div class="row"><i class="fa-solid fa-location-dot"></i><span>الدار البيضاء، المغرب — توصيل لجميع المدن</span></div>
+      </div>
+      <div class="contact-info-card">
+        <p style="color:var(--gray-dim);margin-bottom:14px;">فريقنا متواجد للإجابة عن جميع استفساراتكم بخصوص المنتجات والطلبات وحالة الشحن.</p>
+        <a href="#" class="btn btn-gold btn-block" id="contact-whatsapp-btn"><i class="fa-brands fa-whatsapp"></i> تواصل عبر واتساب</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom:12px;">Velora<span>.</span></div>
+        <p style="color:var(--gray-dim);font-size:0.9rem;max-width:320px;">مجوهرات فاخرة، توصيل لجميع المدن المغربية والدفع عند الاستلام.</p>
+      </div>
+      <div>
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="#shop">المتجر</a></li>
+          <li><a href="#track">تتبع الطلب</a></li>
+          <li><a href="#about">من نحن</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>تواصل</h4>
+        <ul>
+          <li><a href="#contact">اتصل بنا</a></li>
+          <li><a href="admin.html">دخول الإدارة</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Velora Jewelry. جميع الحقوق محفوظة.</div>
+  </div>
+</footer>
+
+<!-- ============ WHATSAPP FLOAT ============ -->
+<a href="https://wa.me/212600000000" target="_blank" class="whatsapp-float" id="whatsapp-float" aria-label="واتساب">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- ============ TOASTS ============ -->
+<div id="toast-container"></div>
+
+<!-- ============ PRODUCT DETAIL MODAL ============ -->
+<div class="modal-overlay" id="product-modal">
+  <div class="modal-box">
+    <button class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+    <div class="pd-grid">
+      <div class="pd-gallery">
+        <div class="pd-main-image"><img src="" alt="product"></div>
+        <div class="pd-thumbs"></div>
+      </div>
+      <div class="pd-details">
+        <span class="product-cat"></span>
+        <h2></h2>
+        <div class="price-row">
+          <span class="price-now"></span>
+          <span class="price-old hidden"></span>
+        </div>
+        <p class="pd-desc"></p>
+        <div class="qty-row">
+          <span style="color:var(--gray-dim);font-size:0.85rem;">الكمية:</span>
+          <div class="qty-control">
+            <button type="button" data-qty="dec">−</button>
+            <span>1</span>
+            <button type="button" data-qty="inc">+</button>
+          </div>
+        </div>
+        <div class="pd-actions">
+          <button class="btn btn-outline" data-action="modal-wishlist"><i class="fa-regular fa-heart"></i></button>
+          <button class="btn btn-gold btn-block" data-action="modal-add-cart">أضف للسلة</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CART DRAWER ============ -->
+<div class="drawer" id="cart-drawer">
+  <div class="drawer-header">
+    <h3>سلة التسوق</h3>
+    <button class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="drawer-body" id="cart-drawer-body"></div>
+  <div class="drawer-footer" id="cart-drawer-footer"></div>
+</div>
+
+<!-- ============ WISHLIST DRAWER ============ -->
+<div class="drawer" id="wishlist-drawer">
+  <div class="drawer-header">
+    <h3>المفضلة</h3>
+    <button class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="drawer-body" id="wishlist-drawer-body"></div>
+</div>
+
+<!-- ============ CHECKOUT MODAL ============ -->
+<div class="modal-overlay" id="checkout-modal">
+  <div class="modal-box" style="max-width:600px;">
+    <button class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+    <div class="checkout-grid">
+      <h2 style="font-family:var(--font-display);color:var(--white);font-size:1.6rem;">إتمام الطلب</h2>
+      <div class="checkout-summary" id="checkout-summary"></div>
+      <form id="checkout-form">
+        <div class="form-row-2">
+          <div class="form-group"><label>الاسم الكامل</label><input type="text" name="name" required></div>
+          <div class="form-group"><label>رقم الهاتف</label><input type="tel" name="phone" required pattern="[0-9+ ]{9,15}"></div>
+        </div>
+        <div class="form-row-2" style="margin-top:16px;">
+          <div class="form-group">
+            <label>المدينة</label>
+            <select name="city" id="city-select" required></select>
+          </div>
+          <div class="form-group"><label>العنوان بالتفصيل</label><input type="text" name="address" required></div>
+        </div>
+        <div class="form-group" style="margin-top:16px;">
+          <label>ملاحظات (اختياري)</label>
+          <textarea name="notes" rows="2"></textarea>
+        </div>
+        <div style="background:rgba(201,168,76,0.08);border:1px solid var(--gold-dim);border-radius:4px;padding:12px;margin-top:16px;font-size:0.85rem;color:var(--gold-light);">
+          <i class="fa-solid fa-truck"></i> الدفع عند الاستلام — التوصيل لجميع المدن المغربية
+        </div>
+        <button type="submit" class="btn btn-gold btn-block" style="margin-top:20px;">تأكيد الطلب (الدفع عند الاستلام)</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ============ ORDER SUCCESS MODAL ============ -->
+<div class="modal-overlay" id="order-success-modal">
+  <div class="modal-box" style="max-width:460px;text-align:center;padding:40px 30px;">
+    <i class="fa-solid fa-circle-check" style="font-size:3rem;color:var(--gold);margin-bottom:16px;"></i>
+    <h2 style="font-family:var(--font-display);color:var(--white);font-size:1.5rem;margin-bottom:10px;">تم استلام طلبك بنجاح!</h2>
+    <p style="color:var(--gray-dim);margin-bottom:6px;">رقم طلبك هو:</p>
+    <p style="color:var(--gold);font-size:1.3rem;font-weight:700;margin-bottom:20px;" id="order-success-number"></p>
+    <p style="color:var(--gray-dim);font-size:0.85rem;margin-bottom:20px;">احتفظي برقم الطلب لتتبع حالته من قسم "تتبع الطلب".</p>
+    <button class="btn btn-gold btn-block" data-action="close-success">تم</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
